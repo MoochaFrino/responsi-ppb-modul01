@@ -1,6 +1,6 @@
 # REST API Pencatatan Peminjaman Buku Perpustakaan
 
-API sederhana untuk layanan pencatatan peminjaman buku perpustakaan 
+API sederhana untuk layanan pencatatan peminjaman buku perpustakaan yang dibangun sebagai pemenuhan tugas Responsi Praktikum PPB.
 
 ## Teknologi yang Digunakan
 - **Backend:** Node.js, Express.js
@@ -34,36 +34,41 @@ API sederhana untuk layanan pencatatan peminjaman buku perpustakaan
     }
   ]
 }
+```
 
-2. POST /loans (Tambah Data)
-Request Body:
+### 2. POST `/loans` (Tambah Data)
+**Request Body:**
+```json
 {
   "book_title": "Struktur Data",
   "member_name": "Christopher Justin",
   "borrow_date": "2026-10-10",
   "status": "Dipinjam"
 }
+```
 
-3. PUT /loans/:id (Update Data)
-Request Body:
+### 3. PUT `/loans/:id` (Update Data)
+**Request Body:**
+```json
 {
   "return_date": "2026-10-15",
   "status": "Dikembalikan"
 }
+```
 
-4. DELETE /loans/:id (Hapus Data)
-Response (200 OK):
+### 4. DELETE `/loans/:id` (Hapus Data)
+**Response (200 OK):**
+```json
 {
   "message": "Data berhasil dihapus"
 }
+```
 
-Panduan Menjalankan Lokal
-Clone repository: git clone <link-repo-anda>
+## Panduan Menjalankan Lokal
+1. Clone repository: `git clone https://github.com/MoochaFrino/responsi-ppb-modul01.git`
+2. Install dependencies: `npm install`
+3. Buat file `.env` dan masukkan `SUPABASE_URL` serta `SUPABASE_KEY`.
+4. Jalankan server: `node index.js`
 
-Install dependencies: npm install
-
-Buat file .env dan masukkan SUPABASE_URL serta SUPABASE_KEY.
-
-Jalankan server: node index.js
-
-Link Base URL Deployment Vercel
+## Link Base URL Deployment Vercel
+[https://responsi-ppb-modul01.vercel.app](https://responsi-ppb-modul01.vercel.app)
